@@ -24,3 +24,13 @@ $container['App\Action\BairroAction'] = function ($c) {
     $bairroRepository = new \App\Repository\Bairro($c->get('em'));
     return new App\Action\BairroAction($bairroRepository);
 };
+
+$container['App\Action\UsuarioAction'] = function ($c) {
+    $usuarioRepository = new \App\Repository\Usuario($c->get('em'));
+    return new App\Action\UsuarioAction($usuarioRepository);
+};
+
+$container['App\Action\OcorrenciaAction'] = function ($c) {
+    $ocorrenciaRepository = new \App\Repository\Ocorrencia($c->get('em'));
+    return new App\Action\OcorrenciaAction($ocorrenciaRepository);
+};

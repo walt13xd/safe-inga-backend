@@ -137,8 +137,12 @@ class Ocorrencia
     /**
      * @return \DateTime
      */
-    public function getDataCriacao()
+    public function getDataCriacao($format = 'd/m/Y H:i:s')
     {
+        if($this->dataCriacao instanceof \DateTime){
+            return $this->dataCriacao->format($format);
+        }
+
         return $this->dataCriacao;
     }
 

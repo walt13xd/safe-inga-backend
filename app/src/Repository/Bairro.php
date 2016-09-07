@@ -20,8 +20,8 @@ class Bairro extends AbstractResource
         if ($id === null) {
             $bairros = $this->entityManager->getRepository('App\Entity\Bairro')->findAll();
             $bairros = array_map(
-                function ($bairro) {
-                    return $bairro->getArrayCopy();
+                function (\App\Entity\Bairro $bairro) {
+                    return ['id' => $bairro->getId(), 'nome' => $bairro->getNome()];
                 },
                 $bairros
             );
