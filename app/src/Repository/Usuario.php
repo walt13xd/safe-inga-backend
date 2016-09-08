@@ -48,7 +48,8 @@ class Usuario extends AbstractResource
                     'data' => $ocorrencia->getDataCriacao(),
                     'tipo_ocorrencia' => \App\Entity\Ocorrencia::getNomeTipoOcorrencia($ocorrencia->getTipoOcorrencia()),
                     'local' => $ocorrencia->getLocal(),
-                    'descricao' => $ocorrencia->getDescricao()
+                    'descricao' => $ocorrencia->getDescricao(),
+                    'bairro' => $ocorrencia->getBairro()->getNome()
                 ];
             }
         }
@@ -63,7 +64,8 @@ class Usuario extends AbstractResource
                             'data' => $ocorrencia->getDataCriacao(),
                             'tipo_ocorrencia' => \App\Entity\Ocorrencia::getNomeTipoOcorrencia($ocorrencia->getTipoOcorrencia()),
                             'local' => $ocorrencia->getLocal(),
-                            'descricao' => $ocorrencia->getDescricao()
+                            'descricao' => $ocorrencia->getDescricao(),
+                            'bairro' => $ocorrencia->getBairro()->getNome()
                         ];
                     }
                 }
